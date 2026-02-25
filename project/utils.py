@@ -26,3 +26,20 @@ def setup_logger(node_type, port):
     logger.addHandler(console_handler)
 
     return logger
+
+def read_seed_config(file_path="config.txt"):
+    seeds = []
+
+    if not os.path.exists(file_path):
+        raise FileNotFoundError("config.txt not found")
+
+    with open(file_path, "r") as f:
+        for line in f:
+            line = line.strip()
+            if not line:
+                continue
+
+            ip, port = line.split(",")
+            seeds.append((ip.strip(), int(port.strip())))
+
+    return seeds

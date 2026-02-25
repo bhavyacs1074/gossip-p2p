@@ -6,6 +6,7 @@ if len(sys.argv) < 3:
     print("Usage:")
     print("REGISTER: python test_client.py <seed_port> REGISTER <peer_port>")
     print("GET:      python test_client.py <seed_port> GET")
+    print("DEAD:     python test_client.py <seed_port> DEAD <dead_peer_port>")
     sys.exit(1)
 
 HOST = "127.0.0.1"
@@ -29,6 +30,19 @@ if command == "REGISTER":
 elif command == "GET":
     message_dict = {
         "type": "GET_PEER_LIST"
+    }
+
+elif command == "DEAD":
+    if len(sys.argv) != 4:
+        print("DEAD requires dead_peer_port")
+        sys.exit(1)
+
+    dead_port = int(sys.argv[3])
+    message_dict = {
+        "type": "DEAD_REPORT",
+        "dead_ip": HOST,
+        "dead_port": dead_port,
+        "reporter": {"ip": HOST, "port": 0}
     }
 
 else:
