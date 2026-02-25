@@ -1,0 +1,6 @@
+2026-02-25 21:03:15,658 - PEER_6002 - INFO - Registering with seeds: [('127.0.0.1', 5002), ('127.0.0.1', 5000)]
+2026-02-25 21:03:15,659 - PEER_6002 - INFO - Peer listening on 127.0.0.1:6002
+2026-02-25 21:03:15,662 - PEER_6002 - INFO - Successfully registered with seeds: [('127.0.0.1', 5002), ('127.0.0.1', 5000)]
+2026-02-25 21:03:15,663 - PEER_6002 - INFO - Fetched 2 candidate peers
+2026-02-25 21:03:15,663 - PEER_6002 - INFO - Selected 1 neighbors: [('127.0.0.1', 6001)]
+2026-02-25 21:03:15,663 - PEER_6002 - INFO - Neighbor reachable: 127.0.0.1:6001

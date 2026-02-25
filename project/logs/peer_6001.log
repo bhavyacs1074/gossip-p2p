@@ -1,0 +1,17 @@
+2026-02-25 21:03:15,432 - PEER_6001 - INFO - Registering with seeds: [('127.0.0.1', 5000), ('127.0.0.1', 5001)]
+2026-02-25 21:03:15,433 - PEER_6001 - INFO - Peer listening on 127.0.0.1:6001
+2026-02-25 21:03:15,437 - PEER_6001 - INFO - Successfully registered with seeds: [('127.0.0.1', 5000), ('127.0.0.1', 5001)]
+2026-02-25 21:03:15,438 - PEER_6001 - INFO - Fetched 1 candidate peers
+2026-02-25 21:03:15,438 - PEER_6001 - INFO - Selected 1 neighbors: [('127.0.0.1', 6000)]
+2026-02-25 21:03:15,438 - PEER_6001 - INFO - Neighbor reachable: 127.0.0.1:6000
+2026-02-25 21:03:35,752 - PEER_6001 - INFO - GOSSIP first-time: 1772033615:127.0.0.1:4 from {'ip': '127.0.0.1', 'port': 6002}
+2026-02-25 21:03:37,504 - PEER_6001 - INFO - Initiating suspicion on 127.0.0.1:6000
+2026-02-25 21:03:39,573 - PEER_6001 - INFO - No neighbors responded to suspicion for 127.0.0.1:6000
+2026-02-25 21:03:40,773 - PEER_6001 - INFO - GOSSIP first-time: 1772033620:127.0.0.1:5 from {'ip': '127.0.0.1', 'port': 6002}
+2026-02-25 21:03:45,790 - PEER_6001 - INFO - GOSSIP first-time: 1772033625:127.0.0.1:6 from {'ip': '127.0.0.1', 'port': 6002}
+2026-02-25 21:03:49,568 - PEER_6001 - INFO - Initiating suspicion on 127.0.0.1:6000
+2026-02-25 21:03:50,816 - PEER_6001 - INFO - GOSSIP first-time: 1772033630:127.0.0.1:7 from {'ip': '127.0.0.1', 'port': 6002}
+2026-02-25 21:03:51,612 - PEER_6001 - INFO - No neighbors responded to suspicion for 127.0.0.1:6000
+2026-02-25 21:03:55,832 - PEER_6001 - INFO - GOSSIP first-time: 1772033635:127.0.0.1:8 from {'ip': '127.0.0.1', 'port': 6002}
+2026-02-25 21:04:00,858 - PEER_6001 - INFO - GOSSIP first-time: 1772033640:127.0.0.1:9 from {'ip': '127.0.0.1', 'port': 6002}
+2026-02-25 21:04:01,651 - PEER_6001 - INFO - Initiating suspicion on 127.0.0.1:6000

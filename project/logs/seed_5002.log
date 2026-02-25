@@ -1,0 +1,19 @@
+2026-02-25 21:03:14,997 - SEED_5002 - INFO - Quorum for registration/removal: 2 of 3
+2026-02-25 21:03:14,997 - SEED_5002 - INFO - Other seeds: [('127.0.0.1', 5000), ('127.0.0.1', 5001)]
+2026-02-25 21:03:14,998 - SEED_5002 - INFO - Seed listening on 127.0.0.1:5002
+2026-02-25 21:03:15,229 - SEED_5002 - INFO - Received from ('127.0.0.1', 58339): {"type": "SEED_PROPOSE", "ip": "127.0.0.1", "port": 6000, "proposer": {"ip": "127.0.0.1", "port": 5001}, "ts": 1772033595.2281313}
+2026-02-25 21:03:15,229 - SEED_5002 - INFO - Voting YES on proposal (ADD) for ('127.0.0.1', 6000)
+2026-02-25 21:03:15,232 - SEED_5002 - INFO - Received from ('127.0.0.1', 58341): {"type": "SEED_COMMIT", "ip": "127.0.0.1", "port": 6000, "committer": {"ip": "127.0.0.1", "port": 5001}, "ts": 1772033595.2305334}
+2026-02-25 21:03:15,232 - SEED_5002 - INFO - Peer added via commit: ('127.0.0.1', 6000)
+2026-02-25 21:03:15,232 - SEED_5002 - INFO - Received from ('127.0.0.1', 58342): {"type": "REGISTER", "ip": "127.0.0.1", "port": 6000}
+2026-02-25 21:03:15,232 - SEED_5002 - INFO - Peer already registered: ('127.0.0.1', 6000)
+2026-02-25 21:03:15,233 - SEED_5002 - INFO - Received from ('127.0.0.1', 58344): {"type": "GET_PEER_LIST"}
+2026-02-25 21:03:15,435 - SEED_5002 - INFO - Received from ('127.0.0.1', 58347): {"type": "SEED_PROPOSE", "ip": "127.0.0.1", "port": 6001, "proposer": {"ip": "127.0.0.1", "port": 5000}, "ts": 1772033595.4347205}
+2026-02-25 21:03:15,435 - SEED_5002 - INFO - Voting YES on proposal (ADD) for ('127.0.0.1', 6001)
+2026-02-25 21:03:15,436 - SEED_5002 - INFO - Received from ('127.0.0.1', 58349): {"type": "SEED_COMMIT", "ip": "127.0.0.1", "port": 6001, "committer": {"ip": "127.0.0.1", "port": 5000}, "ts": 1772033595.4357207}
+2026-02-25 21:03:15,436 - SEED_5002 - INFO - Peer added via commit: ('127.0.0.1', 6001)
+2026-02-25 21:03:15,659 - SEED_5002 - INFO - Received from ('127.0.0.1', 58354): {"type": "REGISTER", "ip": "127.0.0.1", "port": 6002}
+2026-02-25 21:03:15,659 - SEED_5002 - INFO - Proposing registration of ('127.0.0.1', 6002) to seeds
+2026-02-25 21:03:15,660 - SEED_5002 - INFO - Votes for ('127.0.0.1', 6002): 3/3
+2026-02-25 21:03:15,660 - SEED_5002 - INFO - Peer registered (committed): ('127.0.0.1', 6002)
+2026-02-25 21:03:15,662 - SEED_5002 - INFO - Received from ('127.0.0.1', 58360): {"type": "GET_PEER_LIST"}

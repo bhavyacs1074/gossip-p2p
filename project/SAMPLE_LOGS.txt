@@ -1,0 +1,24 @@
+-- Example seed registration logs --
+2026-02-25 20:49:44,382 - SEED_5000 - INFO - Proposing registration of ('127.0.0.1', 6000) to seeds
+2026-02-25 20:49:44,385 - SEED_5001 - INFO - Voting YES on proposal (ADD) for ('127.0.0.1', 6000)
+2026-02-25 20:49:44,390 - SEED_5002 - INFO - Voting YES on proposal (ADD) for ('127.0.0.1', 6000)
+2026-02-25 20:49:44,395 - SEED_5000 - INFO - Votes for ('127.0.0.1', 6000): 3/3
+2026-02-25 20:49:44,396 - SEED_5000 - INFO - Peer registered (committed): ('127.0.0.1', 6000)
+
+-- Example peer actions / gossip --
+2026-02-25 20:49:50,000 - PEER_6000 - INFO - Fetched 2 candidate peers
+2026-02-25 20:49:50,002 - PEER_6000 - INFO - Selected 2 neighbors: [('127.0.0.1', 6001), ('127.0.0.1', 6002)]
+2026-02-25 20:49:55,003 - PEER_6000 - INFO - GOSSIP first-time: 1677365395:127.0.0.1:1 from {'ip': '127.0.0.1', 'port': 6000}
+2026-02-25 20:49:55,010 - PEER_6001 - INFO - GOSSIP first-time: 1677365395:127.0.0.1:1 from {'ip': '127.0.0.1', 'port': 6000}
+
+-- Example suspicion and dead-report flow --
+2026-02-25 20:50:10,500 - PEER_6001 - INFO - Initiating suspicion on 127.0.0.1:6000
+2026-02-25 20:50:10,700 - PEER_6002 - INFO - SUSPICION_RESPONSE: can_reach=False for 127.0.0.1:6000
+2026-02-25 20:50:11,000 - PEER_6001 - INFO - Peer-level consensus: 127.0.0.1:6000 declared dead by neighbors
+2026-02-25 20:50:11,010 - PEER_6001 - INFO - Sent DEAD_REPORT to seeds
+2026-02-25 20:50:11,200 - SEED_5000 - INFO - Received dead-node report for ('127.0.0.1', 6000) from {'ip':'127.0.0.1','port':6001}
+2026-02-25 20:50:11,400 - SEED_5000 - INFO - Removal votes for ('127.0.0.1', 6000): 2/3
+2026-02-25 20:50:11,500 - SEED_5000 - INFO - Peer ('127.0.0.1', 6000) removed after quorum
+
+-- Sample ML entry (peer) --
+hash=ab12...cd34 first_seen=1677365395 origin={'ip':'127.0.0.1','port':6000}

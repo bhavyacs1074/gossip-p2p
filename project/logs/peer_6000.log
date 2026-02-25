@@ -1,0 +1,5 @@
+2026-02-25 21:03:15,225 - PEER_6000 - INFO - Registering with seeds: [('127.0.0.1', 5001), ('127.0.0.1', 5002)]
+2026-02-25 21:03:15,226 - PEER_6000 - INFO - Peer listening on 127.0.0.1:6000
+2026-02-25 21:03:15,232 - PEER_6000 - INFO - Successfully registered with seeds: [('127.0.0.1', 5001), ('127.0.0.1', 5002)]
+2026-02-25 21:03:15,233 - PEER_6000 - INFO - Fetched 0 candidate peers
+2026-02-25 21:03:15,233 - PEER_6000 - INFO - No candidate peers to choose from
