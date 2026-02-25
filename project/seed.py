@@ -2,6 +2,8 @@ import socket
 import threading
 import sys
 from utils import setup_logger
+import json
+
 
 
 class SeedNode:
@@ -40,27 +42,74 @@ class SeedNode:
 
             if not data:
                 self.logger.warning(f"Empty data from {addr}")
-                conn.close()
                 return
 
             message = data.decode().strip()
-
-            # Basic validation check
-            if len(message) == 0:
-                self.logger.warning(f"Blank message from {addr}")
-                conn.close()
-                return
-
             self.logger.info(f"Received from {addr}: {message}")
 
-            # For now, just acknowledge
-            conn.sendall(b"ACK")
+            # Parse JSON
+            try:
+                message_dict = json.loads(message)
+            except json.JSONDecodeError:
+                self.logger.warning(f"Invalid JSON from {addr}")
+                conn.sendall(b"ERROR:INVALID_JSON")
+                return
+
+            msg_type = message_dict.get("type")
+
+            if msg_type == "REGISTER":
+                self.handle_register(message_dict, conn)
+
+            elif msg_type == "GET_PEER_LIST":
+                self.handle_get_peer_list(conn)
+
+            else:
+                self.logger.warning(f"Unknown message type from {addr}")
+                conn.sendall(b"ERROR:UNKNOWN_MESSAGE")
 
         except Exception as e:
             self.logger.error(f"Error handling connection from {addr}: {e}")
         finally:
             conn.close()
+    def handle_register(self, message_dict, conn):
+        ip = message_dict.get("ip")
+        port = message_dict.get("port")
 
+        if not ip or port is None:
+            conn.sendall(b"ERROR:MALFORMED_REGISTER")
+            return
+
+        try:
+            port = int(port)
+        except ValueError:
+            conn.sendall(b"ERROR:INVALID_PORT")
+            return
+
+        peer_key = (ip, port)
+
+        if peer_key in self.peer_list:
+            self.logger.info(f"Peer already registered: {peer_key}")
+            conn.sendall(b"ALREADY_REGISTERED")
+            return
+
+        self.peer_list[peer_key] = {
+            "status": "alive"
+        }
+
+        self.logger.info(f"Peer registered successfully: {peer_key}")
+        conn.sendall(b"REGISTERED")
+    def handle_get_peer_list(self, conn):
+        peers = [
+            {"ip": ip, "port": port}
+            for (ip, port) in self.peer_list.keys()
+        ]
+
+        response = {
+            "type": "PEER_LIST",
+            "peers": peers
+        }
+
+        conn.sendall(json.dumps(response).encode())
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
